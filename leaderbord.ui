@@ -27,7 +27,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../leaderboard_bg.png</pixmap>
+     <pixmap>leaderboard_bg.png</pixmap>
     </property>
    </widget>
    <widget class="QPushButton" name="back_button">
@@ -59,7 +59,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>60</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -83,7 +83,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>100</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -107,7 +107,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>140</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -131,7 +131,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>180</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -155,7 +155,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>220</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -179,7 +179,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>260</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -203,7 +203,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>300</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -227,7 +227,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>340</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -251,7 +251,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>90</x>
       <y>380</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
@@ -275,7 +275,7 @@ color: rgb(91, 91, 91);
      <rect>
       <x>80</x>
       <y>420</y>
-      <width>261</width>
+      <width>550</width>
       <height>41</height>
      </rect>
     </property>
