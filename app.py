@@ -3,6 +3,7 @@ from PyQt5.QtGui import QPainter, QPixmap, QPen, QFont, QFontDatabase
 from PyQt5.QtWidgets import QApplication, QWidget, QMessageBox, QLabel, QMainWindow
 from random import randint, choice
 from PyQt5 import QtWidgets, uic
+import json
 
 WIN_X = 400
 WIN_Y = 50
@@ -102,13 +103,11 @@ class Player:
 
 
 class FailWindow(QMainWindow):
-
     def __init__(self):
         super().__init__()
-        #self.setFixedSize(851,  551)
+        self.setFixedSize(851,  551)
         uic.loadUi('retry.ui', self)
         self.quit_button.clicked.connect(self.quit)
-
 
     def quit(self):
         exit()
@@ -218,6 +217,8 @@ class Dodger(QWidget):
                 self.RetryBox = FailWindow()
                 self.RetryBox.show()
                 self.RetryBox.retry_button.clicked.connect(self.retry)
+                self.RetryBox.save_button.clicked.connect(self.save)
+
                 break
 
         self.update()
@@ -241,6 +242,15 @@ class Dodger(QWidget):
         for road in self.roads:
             road.draw(qp)
         qp.end()
+
+    def save(self):
+        with open('lboard.json', 'r') as f:
+            board = json.load(f)
+        text = self.RetryBox.findChild(QtWidgets.QLineEdit, "lineEdit").text()
+        board.update({text: self.score})
+
+        with open('lboard.json', 'w') as f:
+            json.dump(board, f)
 
     def retry(self):
         self.startGame()

@@ -32,10 +32,10 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>-50</y>
-     <width>521</width>
-     <height>181</height>
+     <x>160</x>
+     <y>-10</y>
+     <width>549</width>
+     <height>94</height>
     </rect>
    </property>
    <property name="font">
@@ -48,119 +48,131 @@
     <string>YOU DIED</string>
    </property>
   </widget>
-  <widget class="QWidget" name="horizontalLayoutWidget">
+  <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>90</y>
-     <width>801</width>
-     <height>91</height>
+     <x>20</x>
+     <y>110</y>
+     <width>368</width>
+     <height>31</height>
     </rect>
    </property>
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <widget class="QLabel" name="label_3">
-      <property name="font">
-       <font>
-        <family>Justice Chrome</family>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>SAVE YOUR RESULT</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit">
-      <property name="styleSheet">
-       <string notr="true">border-radius: 10px;
+   <property name="font">
+    <font>
+     <family>Justice Chrome</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>SAVE YOUR RESULT</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>410</x>
+     <y>100</y>
+     <width>281</width>
+     <height>42</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-radius: 10px;
 border: 3px solid gray;
 padding: 8px 16px;</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="save_button">
-      <property name="font">
-       <font>
-        <family>Justice Chrome</family>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 0, 0, 0);
-color: rgb(16, 15, 16);</string>
-      </property>
-      <property name="text">
-       <string>SAVE</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   </property>
   </widget>
-  <widget class="QWidget" name="verticalLayoutWidget">
+  <widget class="QPushButton" name="save_button">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>100</y>
+     <width>111</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Justice Chrome</family>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(16, 15, 16);</string>
+   </property>
+   <property name="text">
+    <string>SAVE</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="lboard_button">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>220</y>
+     <width>549</width>
+     <height>85</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Justice Chrome</family>
+     <pointsize>40</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(191, 177, 187);</string>
+   </property>
+   <property name="text">
+    <string>Leader Board</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="retry_button">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>300</y>
+     <width>549</width>
+     <height>85</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Justice Chrome</family>
+     <pointsize>40</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
+color: rgb(191, 177, 187);</string>
+   </property>
+   <property name="text">
+    <string>RETRY</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="quit_button">
    <property name="geometry">
     <rect>
      <x>-10</x>
-     <y>210</y>
-     <width>551</width>
-     <height>311</height>
+     <y>380</y>
+     <width>549</width>
+     <height>85</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="lboard_button">
-      <property name="font">
-       <font>
-        <family>Justice Chrome</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 0, 0, 0);
+   <property name="font">
+    <font>
+     <family>Justice Chrome</family>
+     <pointsize>40</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 0);
 color: rgb(191, 177, 187);</string>
-      </property>
-      <property name="text">
-       <string>Leader Board</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="retry_button">
-      <property name="font">
-       <font>
-        <family>Justice Chrome</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 0, 0, 0);
-color: rgb(191, 177, 187);</string>
-      </property>
-      <property name="text">
-       <string>RETRY</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="quit_button">
-      <property name="font">
-       <font>
-        <family>Justice Chrome</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgba(0, 0, 0, 0);
-color: rgb(191, 177, 187);</string>
-      </property>
-      <property name="text">
-       <string>QUIT</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
+   </property>
+   <property name="text">
+    <string>QUIT</string>
+   </property>
   </widget>
  </widget>
  <resources/>
