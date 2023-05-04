@@ -105,7 +105,7 @@ class FailWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
-        self.setFixedSize(600,  300)
+        #self.setFixedSize(851,  551)
         uic.loadUi('retry.ui', self)
         self.quit_button.clicked.connect(self.quit)
 
