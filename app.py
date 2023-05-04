@@ -15,8 +15,7 @@ CAR_WIDTH = 30
 CAR_HEIGHT = 55
 CAR_STEP_X = 40
 CAR_STEP_Y = 10
-fontId = QFontDatabase.addApplicationFont("justicechrome.ttf")
-fontName = QFontDatabase.applicationFontFamilies(fontId)[0]
+
 
 class Obstacle:
     def __init__(self, texture):
@@ -116,11 +115,22 @@ class FailWindow(QMainWindow):
 class LeaderBoardWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('lboard.ui', self)
+        uic.loadUi('leaderbord.ui', self)
         with open('lboard.json', 'r') as f:
-            board = list(json.load(f).items())
+            board = json.load(f)
 
-        self.score_label1.setText(f'1. ')
+        board = dict(sorted(board.items(), key=lambda x: x[1]))
+        board = list(board.items())
+        self.score_label_1.setText(f'1:  {board[0][0]}: {board[0][1]}')
+        self.score_label_2.setText(f'2:  {board[1][0]}:  {board[1][1]}')
+        self.score_label_3.setText(f'3:  {board[2][0]}:  {board[2][1]}')
+        self.score_label_4.setText(f'4:  {board[3][0]}:  {board[3][1]}')
+        self.score_label_5.setText(f'5:  {board[4][0]}:  {board[4][1]}')
+        self.score_label_6.setText(f'6:  {board[5][0]}:  {board[5][1]}')
+        self.score_label_7.setText(f'7:  {board[6][0]}:  {board[6][1]}')
+        self.score_label_8.setText(f'8:  {board[7][0]}:  {board[7][1]}')
+        self.score_label_9.setText(f'9:  {board[8][0]}:  {board[8][1]}')
+        self.score_label_10.setText(f'10:  {board[9][0]}:  {board[9][1]}')
 
         self.back_button.clicked.connect(self.back)
 
@@ -153,7 +163,8 @@ class Dodger(QWidget):
         self.score_label.setAlignment(Qt.AlignCenter)
         self.score_pixmap = QPixmap('text_fon1.png')
         self.score_label.setPixmap(self.score_pixmap)
-
+        fontId = QFontDatabase.addApplicationFont("justicechrome.ttf")
+        fontName = QFontDatabase.applicationFontFamilies(fontId)[0]
         self.score_label.setFont(QFont(fontName, 20))
 
         self.difficulty_label = QLabel(self)
@@ -267,7 +278,13 @@ class Dodger(QWidget):
         with open('lboard.json', 'r') as f:
             board = json.load(f)
         text = self.RetryBox.findChild(QtWidgets.QLineEdit, "lineEdit").text()
-        if self.score > min(board.values):
+        minn = min(board.values())
+        if self.score > minn:
+            for i in list(board.items()):
+                if i[1] == minn:
+                    board.pop(i[0])
+                    board.update({text: self.score})
+                    break
             with open('lboard.json', 'w') as f:
                 json.dump(board, f)
 
