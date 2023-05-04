@@ -2,7 +2,6 @@ from PyQt5 import QtCore
 
 from PyQt5 import QtWidgets, uic
 
-
 class Menu(QtWidgets.QMainWindow):
     switch_window_signal = QtCore.pyqtSignal(int)
 

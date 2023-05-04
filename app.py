@@ -15,7 +15,8 @@ CAR_WIDTH = 30
 CAR_HEIGHT = 55
 CAR_STEP_X = 40
 CAR_STEP_Y = 10
-
+fontId = QFontDatabase.addApplicationFont("justicechrome.ttf")
+fontName = QFontDatabase.applicationFontFamilies(fontId)[0]
 
 class Obstacle:
     def __init__(self, texture):
@@ -112,6 +113,25 @@ class FailWindow(QMainWindow):
     def quit(self):
         exit()
 
+class LeaderBoardWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('lboard.ui', self)
+        with open('lboard.json', 'r') as f:
+            board = list(json.load(f).items())
+
+        self.score_label1.setText(f'1. ')
+
+        self.back_button.clicked.connect(self.back)
+
+    def back(self):
+        self.hide()
+        self.game = Dodger()
+        self.game.show()
+
+
+
+
 class Dodger(QWidget):
 
     def __init__(self):
@@ -133,8 +153,7 @@ class Dodger(QWidget):
         self.score_label.setAlignment(Qt.AlignCenter)
         self.score_pixmap = QPixmap('text_fon1.png')
         self.score_label.setPixmap(self.score_pixmap)
-        fontId = QFontDatabase.addApplicationFont("justicechrome.ttf")
-        fontName = QFontDatabase.applicationFontFamilies(fontId)[0]
+
         self.score_label.setFont(QFont(fontName, 20))
 
         self.difficulty_label = QLabel(self)
@@ -218,6 +237,7 @@ class Dodger(QWidget):
                 self.RetryBox.show()
                 self.RetryBox.retry_button.clicked.connect(self.retry)
                 self.RetryBox.save_button.clicked.connect(self.save)
+                self.RetryBox.lboard_button.clicked.connect(self.lboard)
 
                 break
 
@@ -247,10 +267,15 @@ class Dodger(QWidget):
         with open('lboard.json', 'r') as f:
             board = json.load(f)
         text = self.RetryBox.findChild(QtWidgets.QLineEdit, "lineEdit").text()
-        board.update({text: self.score})
+        if self.score > min(board.values):
+            with open('lboard.json', 'w') as f:
+                json.dump(board, f)
 
-        with open('lboard.json', 'w') as f:
-            json.dump(board, f)
+    def lboard(self):
+        self.hide()
+        self.RetryBox.hide()
+        t = LeaderBoardWindow()
+        t.show()
 
     def retry(self):
         self.startGame()
